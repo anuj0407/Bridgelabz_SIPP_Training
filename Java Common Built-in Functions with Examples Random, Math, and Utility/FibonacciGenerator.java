@@ -32,6 +32,4 @@ int n = inputNumber();
 fibonacci(n,0,1);
 }
 
-
-
 }
