@@ -1,0 +1,2 @@
+Hello Performing reading operation and using 
+HashMap to count Word Word frequency Hello
