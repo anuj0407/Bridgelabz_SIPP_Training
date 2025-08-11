@@ -1,0 +1,34 @@
+start 
+	class pet start
+		pet constructor with parameter string name
+		sound method start
+			display pet sound
+		sound method end
+	class pet end
+
+	class dog start it inherits pet class
+		dog constructor with string name
+		overriding sound method of parent class
+		sound method start
+			display bark
+		sound method end
+	class dog end
+
+	class cat start it inherits pet class
+		cat constructor with string name
+		overriding sound method of parent class
+		sound method start
+			display cat sound
+		sound method end
+	class cat end
+
+ 	class bird start it inherits pet class
+		bird constructor with string name
+		overriding sound method of parent class
+		sound method start
+			display bird sound
+		sound method end
+	class bird end
+end
+
+
