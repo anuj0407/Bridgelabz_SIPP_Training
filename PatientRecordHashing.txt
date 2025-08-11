@@ -1,0 +1,24 @@
+START
+
+CREATE HASHMAP patientRecords (key = patientID, value = patientName)
+
+FUNCTION addPatient(id, name)
+    patientRecords[id] = name
+
+FUNCTION getPatient(id)
+    PRINT patientRecords[id]
+
+FUNCTION updatePatient(id, newName)
+    patientRecords[id] = newName
+
+FUNCTION deletePatient(id)
+    REMOVE patientRecords[id]
+
+// MAIN
+addPatient(101, "Alice")
+addPatient(102, "Bob")
+getPatient(101)
+updatePatient(101, "Alicia")
+deletePatient(102)
+
+END
