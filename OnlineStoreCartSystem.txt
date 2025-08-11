@@ -1,0 +1,22 @@
+
+CLASS Item
+    VARIABLE name : STRING
+    VARIABLE price : DOUBLE
+
+CLASS Cart
+    VARIABLE items : LIST<Item>
+
+    METHOD addItem(item)
+        items.add(item)
+
+    GENERIC METHOD calculateTotalPrice()
+        total = 0
+        FOR each item IN items
+            total += item.price
+        RETURN total
+
+MAIN
+    cart = NEW Cart()
+    cart.addItem(Item("Book", 150))
+    cart.addItem(Item("Pen", 20))
+    PRINT "Total Price: " + cart.calculateTotalPrice()
