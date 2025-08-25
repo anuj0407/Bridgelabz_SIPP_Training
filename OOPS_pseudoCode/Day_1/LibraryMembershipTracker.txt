@@ -1,0 +1,61 @@
+start
+
+  create class Member
+
+  attribute name
+
+  attribute id
+
+  attribute date
+
+  Constructor(name, id, date)
+
+  Set name
+
+  Set id
+
+  Set date
+
+ 
+
+  Method Membership_Validity()
+
+  if(date>2026/01/01)
+
+  return "invalid"
+
+  else
+
+  return "valid"
+
+ 
+
+  Method display details()
+
+  print name , id , date
+
+ 
+
+Class Main
+
+  Method main()
+
+  Create obj1 member(Anuj,01,2025/08/07)
+
+  print obj1.display()
+
+  print obj1.Membership_Validity()
+
+  Create obj2 member(Hemant,02,2025/09/08)
+
+  print obj2.display()
+
+  print obj2.Membership_Validity()
+
+  Create obj3 member(Dhruv,03,2025/10/09)
+
+  print obj3.display()
+
+  print obj3.Membership_Validity()
+
+ 

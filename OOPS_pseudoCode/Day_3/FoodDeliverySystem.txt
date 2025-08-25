@@ -1,0 +1,44 @@
+START
+
+CLASS Customer
+    ATTRIBUTE name
+    ATTRIBUTE address
+    CONSTRUCTOR Customer(name, address)
+        SET this.name = name
+        SET this.address = address
+
+CLASS Restaurant
+    ATTRIBUTE name
+    ATTRIBUTE location
+    CONSTRUCTOR Restaurant(name, location)
+        SET this.name = name
+        SET this.location = location
+
+CLASS DeliveryBoy
+    ATTRIBUTE name
+    ATTRIBUTE contact
+    CONSTRUCTOR DeliveryBoy(name, contact)
+        SET this.name = name
+        SET this.contact = contact
+
+CLASS Order
+    ATTRIBUTE customer
+    ATTRIBUTE restaurant
+    ATTRIBUTE deliveryBoy
+    ATTRIBUTE itemsList
+    CONSTRUCTOR Order(customer, restaurant, deliveryBoy, itemsList)
+        SET attributes
+    METHOD displayOrder()
+        PRINT "Customer: " + customer.name
+        PRINT "Restaurant: " + restaurant.name
+        PRINT "Delivery Boy: " + deliveryBoy.name
+        PRINT "Items: " + itemsList
+
+// MAIN
+CREATE cust = Customer("Alice", "123 Street")
+CREATE rest = Restaurant("Pizza Hut", "Downtown")
+CREATE boy = DeliveryBoy("John", "9876543210")
+CREATE order = Order(cust, rest, boy, ["Pizza", "Coke"])
+CALL order.displayOrder()
+
+END
