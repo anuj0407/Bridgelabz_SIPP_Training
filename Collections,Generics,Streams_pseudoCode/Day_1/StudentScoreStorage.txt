@@ -1,0 +1,16 @@
+
+MAIN
+    studentScores : MAP<String, Integer>
+    studentScores["Amit"] = 85
+    studentScores["Rohit"] = 92
+    studentScores["Priya"] = 78
+
+ 
+    highest = studentScores.entrySet()
+               .stream()
+               .max( compare by value )
+               .get()
+
+    PRINT "Highest Scorer: " + highest.key + " - Marks: " + highest.value
+
+

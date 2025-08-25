@@ -1,0 +1,35 @@
+CLASS Transaction<T>
+    VARIABLE method : T
+    VARIABLE amount : DOUBLE
+
+    METHOD constructor(method, amount)
+        this.method = method
+        this.amount = amount
+
+    METHOD process()
+        PRINT "Processing payment of " + amount + " via " + method
+
+// Payment methods
+CLASS UPI
+    VARIABLE upiId : STRING
+    METHOD toString()
+        RETURN "UPI (" + upiId + ")"
+
+CLASS Card
+    VARIABLE cardNumber : STRING
+    METHOD toString()
+        RETURN "Card ending " + last 4 digits of cardNumber
+
+CLASS NetBanking
+    VARIABLE bankName : STRING
+    METHOD toString()
+        RETURN "NetBanking (" + bankName + ")"
+
+MAIN
+    txn1 = NEW Transaction<UPI>( UPI("amit@upi"), 1500.00 )
+    txn2 = NEW Transaction<Card>( Card("1234567812345678"), 4500.50 )
+    txn3 = NEW Transaction<NetBanking>( NetBanking("HDFC Bank"), 2500.75 )
+
+    txn1.process()
+    txn2.process()
+    txn3.process()
