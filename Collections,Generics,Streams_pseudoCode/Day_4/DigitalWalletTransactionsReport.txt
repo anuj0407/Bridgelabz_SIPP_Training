@@ -1,0 +1,18 @@
+start
+class Transaction
+    attributes: userId, type, amount
+
+transactions = list of Transaction
+
+// Group by user
+groupByUser = transactions.stream()
+    .collect(groupingBy(t -> t.userId))
+
+// Group by transaction type
+groupByType = transactions.stream()
+    .collect(groupingBy(t -> t.type))
+
+// Summarize total spent by each user
+userTotals = transactions.stream()
+    .collect(groupingBy(t -> t.userId, summingDouble(t -> t.amount)))
+end

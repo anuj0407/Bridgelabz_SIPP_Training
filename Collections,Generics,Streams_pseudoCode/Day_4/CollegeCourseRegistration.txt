@@ -1,0 +1,14 @@
+start
+map<Course, List<Student>> courseMap
+
+method registerStudent(course, student)
+    if course not in map
+        map[course] = new List
+    map[course].add(student)
+
+method displayRegistrations()
+    for each course in map
+        print course
+        for student in map[course]
+            print student
+end
