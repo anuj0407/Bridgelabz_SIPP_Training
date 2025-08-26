@@ -1,0 +1,31 @@
+start
+CLASS Account
+    ATTRIBUTES: accountNumber, holderName, balance
+    METHOD deposit(amount)
+        balance = balance + amount
+    METHOD withdraw(amount)
+        PRINT "Withdrawal rules not defined"
+
+CLASS SavingAccount EXTENDS Account
+    ATTRIBUTE: minimumBalance = 1000
+    METHOD withdraw(amount)
+        IF (balance - amount) >= minimumBalance
+            balance = balance - amount
+            PRINT "Withdrawal successful"
+        ELSE
+            PRINT "Insufficient balance to maintain minimum balance"
+
+CLASS CurrentAccount EXTENDS Account
+    ATTRIBUTE: overdraftLimit = 5000
+    METHOD withdraw(amount)
+        IF (balance - amount) >= -overdraftLimit
+            balance = balance - amount
+            PRINT "Withdrawal successful with overdraft"
+        ELSE
+            PRINT "Overdraft limit exceeded"
+
+MAIN:
+    CREATE savingAcc, currentAcc
+    savingAcc.withdraw(500)
+    currentAcc.withdraw(6000)
+end

@@ -1,0 +1,33 @@
+start
+abstract class Vehicle
+    attributes: regNo, brand, dailyRate
+    abstract method displayDetails()
+
+interface Rentable
+    method calculateRent(days)
+
+class Car extends Vehicle implements Rentable
+    method displayDetails()
+        print brand, regNo, "Car"
+    method calculateRent(days)
+        return days * dailyRate
+
+class Bike extends Vehicle implements Rentable
+    method displayDetails()
+        print brand, regNo, "Bike"
+    method calculateRent(days)
+        return days * dailyRate * 0.8
+
+class VehicleFactory
+    method getVehicle(type, brand, regNo, rate)
+        if type == "Car"
+            return new Car(brand, regNo, rate)
+        else if type == "Bike"
+            return new Bike(brand, regNo, rate)
+
+main:
+    v1 = VehicleFactory.getVehicle("Car", "Honda", "KA01", 2000)
+    v2 = VehicleFactory.getVehicle("Bike", "Yamaha", "MH12", 1000)
+    v1.displayDetails()
+    print v1.calculateRent(3)
+end
