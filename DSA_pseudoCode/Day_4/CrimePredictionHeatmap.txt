@@ -1,0 +1,24 @@
+start
+class Graph
+    attributes: adjacencyList, crimeCount[zone]
+
+    method addEdge(zone1, zone2)
+        adjacencyList[zone1].add(zone2)
+        adjacencyList[zone2].add(zone1)
+
+    method dfs(zone, visited)
+        mark zone visited
+        if crimeCount[zone] > threshold
+            mark zone as "high-risk"
+        for neighbor in adjacencyList[zone]
+            if not visited[neighbor]
+                dfs(neighbor, visited)
+
+main:
+    graph = Graph()
+    graph.addEdge(A, B)
+    graph.addEdge(B, C)
+    crimeCount[A]=5, B=12, C=3
+    visited = []
+    graph.dfs(A, visited)
+end
