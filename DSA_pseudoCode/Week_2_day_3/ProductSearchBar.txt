@@ -1,0 +1,27 @@
+FUNCTION binarySearch(catalog, productName)
+    left = 0
+    right = length(catalog) - 1
+    
+    WHILE left <= right
+        mid = (left + right) / 2
+        IF catalog[mid] == productName
+            RETURN TRUE
+        ELSE IF catalog[mid] < productName
+            left = mid + 1
+        ELSE
+            right = mid - 1
+    END WHILE
+    RETURN FALSE
+
+// ----- Simulation -----
+catalog = ["AirPods", "Backpack", "Camera", "Laptop", "Shoes", "Smartphone", "Watch"]
+
+IF binarySearch(catalog, "Laptop") == TRUE
+    PRINT "Laptop available in Electronics category"
+ELSE
+    PRINT "Sorry, Laptop not found."
+
+IF binarySearch(catalog, "Headphones") == TRUE
+    PRINT "Headphones available"
+ELSE
+    PRINT "Sorry, Headphones are currently out of stock."
